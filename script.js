@@ -1,6 +1,6 @@
 // ===== Настройки =====
 // Укажи URL своего Cloudflare Worker, когда развернёшь его (см. файл cloudflare-worker.js и README)
-const ADVICE_ENDPOINT = localStorage.getItem('advice_url') || ''; // можно задать через консоль или код
+const ADVICE_ENDPOINT = localStorage.getItem('new1.karpgopader.workers.dev') || ''; // можно задать через консоль или код
 
 // ===== Генерация примеров по классам =====
 function makeQuestion(grade){
