@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Весёлый счёт — тест 1–5 класс</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2b6cb0" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Весёлый счёт</h1>
+
+    <div class="intro">
+      <label>Класс:
+        <select id="grade">
+          <option value="1">1 класс</option>
+          <option value="2">2 класс</option>
+          <option value="3">3 класс</option>
+          <option value="4">4 класс</option>
+          <option value="5" selected>5 класс</option>
+        </select>
+      </label>
+      <button id="startBtn">Начать тест (10 примеров)</button>
+    </div>
+
+    <div id="quiz" class="hidden">
+      <div class="progress"><span id="progressText">1 / 10</span></div>
+      <div class="question" id="questionText">2 + 3 = ?</div>
+      <input id="answer" type="number" inputmode="numeric" placeholder="Ответ" />
+      <div class="actions">
+        <button id="checkBtn">Ответить</button>
+        <button id="skipBtn" class="ghost">Пропустить</button>
+      </div>
+      <div id="feedback"></div>
+    </div>
+
+    <div id="result" class="hidden">
+      <h2>Результат</h2>
+      <p id="scoreLine"></p>
+      <div id="advice" class="muted"></div>
+      <button id="restartBtn">Пройти ещё раз</button>
+    </div>
+
+    <footer>
+      <button id="installBtn" class="ghost hidden">Установить как приложение</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
